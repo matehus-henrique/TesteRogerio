@@ -22,7 +22,7 @@ class PerfilController extends Controller
     {
         $request->validate(Perfil::rules());
         Perfil::create($request->all());
-        return redirect()->route('perfis.index')->with('success', 'Perfil criado com sucesso!');
+        return redirect()->back()->with('success', 'Perfil criado com sucesso!');
     }
     
     public function edit(Perfil $perfil)
