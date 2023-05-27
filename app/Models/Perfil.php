@@ -11,10 +11,13 @@ class Perfil extends Model
 
     protected $fillable = ['nome', 'sobrenome', 'dbo', 'genero'];
 
-    protected $rules = [
-        'nome' => 'required',
-        'sobrenome' => 'required',
-        'dbo' => 'required|date',
-        'genero' => 'required',
-    ];
+    public static function rules()
+    {
+        return [
+            'nome' => 'required',
+            'sobrenome' => 'required',
+            'dbo' => 'required|date',
+            'genero' => 'required',
+        ];
+    }
 }
