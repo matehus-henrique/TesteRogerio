@@ -11,5 +11,8 @@ class Relatorio extends Model
 
     protected $fillable = ['titulo', 'descricao'];
 
-    
+    public function relatorios()
+    {
+        return $this->belongsToMany(Relatorio::class, 'perfil_relatorio');
+    }
 }
