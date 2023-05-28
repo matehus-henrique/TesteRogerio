@@ -10,4 +10,6 @@ class Relatorio extends Model
     use HasFactory;
 
     protected $fillable = ['titulo', 'descricao'];
+
+    
 }

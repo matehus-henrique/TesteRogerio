@@ -20,11 +20,20 @@ class PerfilController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate(Perfil::rules());
-        Perfil::create($request->all());
-        return redirect()->back()->with('success', 'Perfil criado com sucesso!');
+        $perfil = new Perfil;
+        $perfil->nome = $request->nome;
+        $perfil->sobrenome = $request->sobrenome;
+        $perfil->dbo = $request->dbo;
+        $perfil->genero = $request->genero;
+        $perfil->save();
+        return redirect()->back()->with('success', 'Relatório criado com sucesso.');
     }
-    
+
+    public function show(Perfil $perfil)
+    {
+        return view('perfis.show', compact('perfil'));
+    }
+
     public function edit(Perfil $perfil)
     {
         return view('perfis.edit', compact('perfil'));
@@ -32,14 +41,19 @@ class PerfilController extends Controller
 
     public function update(Request $request, Perfil $perfil)
     {
-        $request->validate(Perfil::rules());
-        $perfil->update($request->all());
-        return redirect()->route('perfis.index')->with('success', 'Perfil atualizado com sucesso!');
+        $perfil->nome = $request->nome;
+        $perfil->sobrenome = $request->sobrenome;
+        $perfil->dbo = $request->dbo;
+        $perfil->genero = $request->genero;
+        $perfil->save();
+
+        return redirect('/perfis');
     }
 
     public function destroy(Perfil $perfil)
     {
         $perfil->delete();
-        return redirect()->route('perfis.index')->with('success', 'Perfil excluído com sucesso!');
+
+        return redirect('/perfis');
     }
 }
