@@ -16,34 +16,16 @@
     <label for="descricao">Descrição:</label>
     <textarea name="descricao" required></textarea>
     <br>
+    <select name="id_perfil" id="">
+        <option value=""></option>
+        @foreach ($perfil as $item)
+        <option value="{{$item->id}}">{{$item->nome}}</option>      
+        @endforeach
+    </select>
+    <br>
     <button type="submit">Salvar</button>
 </form>
-{{-- <table>
-    <thead>
-        <tr>
-            <td>
-                Título
-            </td>
-            <td>Descrição</td>
-            <td>Relacionar</td>
-        </tr>
-    </thead>
-    <tbody>
 
-        @foreach ($relatorios as $item)
-        <tr>
-            <td>{{$item->titulo}}</td>
-            <td>{{$item->descricao}}</td>
-            <td><select name="" id="">
-                <option value="">PESSOAS</option>
-                </select>
-            </td>
-        </tr>
-        
-    @endforeach
-    </tbody>
-    
-</table> --}}
 
 
 </body>

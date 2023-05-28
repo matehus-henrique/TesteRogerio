@@ -13,16 +13,16 @@ Route::get('/perfis/{perfil}', [PerfilController::class, 'show']);
 Route::get('/perfis/{perfil}/edit', [PerfilController::class, 'edit']);
 Route::put('/perfis/{perfil}', [PerfilController::class, 'update']);
 Route::delete('/perfis/{perfil}', [PerfilController::class, 'destroy']);
-Route::get('relatorios', [RelatorioController::class, 'index']);
-Route::get('relatorios/create', [RelatorioController::class, 'create']);
-Route::post('relatorios', [RelatorioController::class, 'store'])->name('relatorios.store');
-
-Route::get('relatorios/create/{perfilId}', [RelatorioController::class, 'create'])->name('relatorios.create');
-Route::get('relatorios/create/{perfilId}', [RelatorioController::class, 'create'])->name('relatorios.create');
+Route::get('/relatorios', [RelatorioController::class, 'index'])->name('relatorios.index');
 
 
-
-
+Route::get('/relatorios', [RelatorioController::class, 'index']);
+Route::get('/relatorios/create', [RelatorioController::class, 'create'])->name('relatorios.create');
+Route::post('/relatorios', [RelatorioController::class, 'store'])->name('relatorios.store');
+Route::get('/relatorios/{relatorio}', [RelatorioController::class, 'show']);
+Route::get('/relatorios/{relatorio}/edit', [RelatorioController::class, 'edit']);
+Route::put('/relatorios/{relatorio}', [RelatorioController::class, 'update']);
+Route::delete('/relatorios/{relatorio}', [RelatorioController::class, 'destroy']);
 
 Route::get('/', function () {
     return view('welcome');

@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Relatorio;
+use App\Models\RelatorioRelacao;
+use App\Models\Perfil;
 use Illuminate\Http\Request;
+
+use PDF;
+
+use Illuminate\Support\Facades\DB;
 
 class RelatorioController extends Controller
 {
@@ -15,14 +21,42 @@ class RelatorioController extends Controller
 
     public function create()
     {
-        return view('relatorios.create');
+        $data['perfil'] = Perfil::all(); 
+        return view('relatorios.create',$data);
+
     }
 
     public function store(Request $request)
     {
-        $relatorio = Relatorio::create($request->all());
+        // array para salvar os dados do form
+        $dataForm = array(
+            'descricao' => $request->post("descricao"),
+            'titulo'    => $request->post("titulo"),
+        );
+        Relatorio::create($dataForm);
+        $last_id = Relatorio::all()->last();
+        $dataRelacao = array(
+            'perfil_id'        => $request->post("id_perfil"),
+            'relatorio_id'     => $last_id->id
+        );
+        RelatorioRelacao::create($dataRelacao);
         return redirect()->back()->with('success', 'Relatório criado com sucesso.');
     }
+
+    public function pdf()
+    {
+
+    }
+    public function show($id)
+{
+    $data['relatorio'] = Relatorio::find($id); 
+
+    // if (empty($relatorio)) {
+    //     return redirect()->back()->with('error', 'Relatório não encontrado.');
+    // }
+
+    return view('relatorios.show',$data);
+}
 
     // public function show(Relatorio $relatorio)
     // {
