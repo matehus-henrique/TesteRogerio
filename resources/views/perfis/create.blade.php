@@ -18,4 +18,7 @@
     </select><br>
 
     <button type="submit">Salvar</button>
+
+    <a href="/perfis">Voltar para a página inicial</a>
+
 </form>

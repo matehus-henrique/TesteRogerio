@@ -9,14 +9,14 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 
 Route::get('/perfis', [PerfilController::class, 'index']);
-Route::get('/perfis/create', [PerfilController::class, 'create']);
+Route::get('/perfis/create', [PerfilController::class, 'create'])->name('perfis.create');
 Route::post('/perfis', [PerfilController::class, 'store']);
 Route::get('/perfis/{perfil}', [PerfilController::class, 'show']);
 Route::get('/perfis/{perfil}/edit', [PerfilController::class, 'edit'])->name('perfis.edit');
-
 Route::put('/perfis/{perfil}', [PerfilController::class, 'update'])->name('perfis.update');
-Route::delete('/perfis/{perfil}', [PerfilController::class, 'destroy']);
-Route::get('/relatorios', [RelatorioController::class, 'index'])->name('relatorios.index');
+Route::delete('/perfis/{perfil}', [PerfilController::class, 'destroy'])->name('perfis.destroy');
+Route::get('/perfis/{perfil}', [PerfilController::class, 'show'])->name('perfis.show');
+
 
 
 
