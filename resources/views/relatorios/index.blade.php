@@ -8,7 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    @php
+    use Illuminate\Support\Str;
+    @endphp
     <h1>Relatórios</h1>
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -30,7 +32,7 @@
                 <tr>
                     <td>{{ $relatorio->id }}</td>
                     <td>{{ $relatorio->titulo }}</td>
-                    <td>{{ $relatorio->descricao }}</td>
+                    <td>{{ strlen($relatorio->descricao) > 100 ? substr($relatorio->descricao, 0, 100) . '...' : $relatorio->descricao }}</td><td>
                     <td>
                         <a href="{{ route('relatorios.show', $relatorio->id) }}" class="btn btn-primary">Ver</a>
                         <a href="{{ route('relatorios.edit', $relatorio->id) }}" class="btn btn-secondary">Editar</a>
