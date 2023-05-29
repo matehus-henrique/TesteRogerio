@@ -12,10 +12,12 @@ Route::get('/perfis', [PerfilController::class, 'index']);
 Route::get('/perfis/create', [PerfilController::class, 'create']);
 Route::post('/perfis', [PerfilController::class, 'store']);
 Route::get('/perfis/{perfil}', [PerfilController::class, 'show']);
-Route::get('/perfis/{perfil}/edit', [PerfilController::class, 'edit']);
-Route::put('/perfis/{perfil}', [PerfilController::class, 'update']);
+Route::get('/perfis/{perfil}/edit', [PerfilController::class, 'edit'])->name('perfis.edit');
+
+Route::put('/perfis/{perfil}', [PerfilController::class, 'update'])->name('perfis.update');
 Route::delete('/perfis/{perfil}', [PerfilController::class, 'destroy']);
 Route::get('/relatorios', [RelatorioController::class, 'index'])->name('relatorios.index');
+
 
 
 Route::get('/relatorios', [RelatorioController::class, 'index']);

@@ -46,10 +46,9 @@ class PerfilController extends Controller
         $perfil->dbo = $request->dbo;
         $perfil->genero = $request->genero;
         $perfil->save();
-
-        return redirect('/perfis');
+    
+        return redirect()->back()->with('alterado com ');
     }
-
     public function destroy(Perfil $perfil)
     {
         $perfil->delete();
