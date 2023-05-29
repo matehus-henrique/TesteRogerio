@@ -66,25 +66,20 @@ class RelatorioController extends Controller
     return view('relatorios.show',$data);
 }
 
-    // public function show(Relatorio $relatorio)
-    // {
-    //     return view('relatorios.show', compact('relatorio'));
-    // }
+    public function edit(Relatorio $relatorio)
+    {
+        return view('relatorios.edit', compact('relatorio'));
+    }
 
-    // public function edit(Relatorio $relatorio)
-    // {
-    //     return view('relatorios.edit', compact('relatorio'));
-    // }
+    public function update(Request $request, Relatorio $relatorio)
+    {
+        $relatorio->update($request->all());
+        return redirect()->route('relatorios.index')->with('success', 'Relatório atualizado com sucesso.');
+    }
 
-    // public function update(Request $request, Relatorio $relatorio)
-    // {
-    //     $relatorio->update($request->all());
-    //     return redirect()->route('relatorios.index')->with('success', 'Relatório atualizado com sucesso.');
-    // }
-
-    // public function destroy(Relatorio $relatorio)
-    // {
-    //     $relatorio->delete();
-    //     return redirect()->route('relatorios.index')->with('success', 'Relatório excluído com sucesso.');
-    // }
+    public function destroy(Relatorio $relatorio)
+    {
+        $relatorio->delete();
+        return redirect()->route('relatorios.index')->with('success', 'Relatório excluído com sucesso.');
+    }
 }

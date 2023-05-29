@@ -24,5 +24,7 @@
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>
+        
+    <a href="/perfis">Voltar para a página inicial</a>
     </form>
 
