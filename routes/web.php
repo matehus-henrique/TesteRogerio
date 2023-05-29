@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\RelatorioController;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 
 
@@ -23,7 +25,8 @@ Route::get('/relatorios/{relatorio}', [RelatorioController::class, 'show']);
 Route::get('/relatorios/{relatorio}/edit', [RelatorioController::class, 'edit']);
 Route::put('/relatorios/{relatorio}', [RelatorioController::class, 'update']);
 Route::delete('/relatorios/{relatorio}', [RelatorioController::class, 'destroy']);
-
+Route::get('/pdf/{id}', [RelatorioController::class, 'pdf']);
 Route::get('/', function () {
-    return view('welcome');
+    $pdf = Pdf::loadView('welcome');
+    return $pdf->stream('invoice.pdf');
 });

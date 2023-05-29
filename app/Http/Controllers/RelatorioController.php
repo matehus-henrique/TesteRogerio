@@ -6,10 +6,9 @@ use App\Models\Relatorio;
 use App\Models\RelatorioRelacao;
 use App\Models\Perfil;
 use Illuminate\Http\Request;
-
-use PDF;
-
-use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Mail;
+use stdClass;
 
 class RelatorioController extends Controller
 {
@@ -40,11 +39,20 @@ class RelatorioController extends Controller
             'relatorio_id'     => $last_id->id
         );
         RelatorioRelacao::create($dataRelacao);
+        $this->pdf($last_id->id);
+
         return redirect()->back()->with('success', 'Relatório criado com sucesso.');
     }
 
-    public function pdf()
+    public function pdf($id)
     {
+        $data['relatorio'] = Relatorio::find($id); 
+        PDF::loadView('relatorios.pdf', $data)->save(public_path().'/pdf/'.$id.'.pdf')->stream('download.pdf');
+        $email = new stdClass();
+        $email->id_pdf = $id;
+        // return new \App\Mail\newLaravelTips($id);
+        \Illuminate\Support\Facades\Mail::send(new \App\Mail\newLaravelTips($email));
+        return 'ok';
 
     }
     public function show($id)
