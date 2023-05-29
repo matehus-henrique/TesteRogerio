@@ -10,6 +10,7 @@
 <body>
     <h1>Perfis</h1>
     <a href="{{ route('perfis.create') }}" class="btn btn-primary">Criar Perfil</a>
+    <a href="/" class="btn btn-primary">Início</a>
     <br><br>
     <table class="table">
         <thead>

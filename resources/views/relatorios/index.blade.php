@@ -14,6 +14,7 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
     <a href="{{ route('relatorios.create') }}" class="btn btn-primary">Novo Relatório</a>
+    <a href="/" class="btn btn-primary">Início</a>
 
     <table class="table mt-4">
         <thead>
