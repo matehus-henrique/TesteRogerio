@@ -14,7 +14,7 @@
     <label for="titulo">Título:</label>
     <input type="text" name="titulo" required>
     <br>
-    <label for="descricao">Descrição:</label>
+    <label for="descricao" id="descricao-label">Descrição:</label>
     <textarea name="descricao" required></textarea>
     <br>
     <select name="id_perfil" id="">

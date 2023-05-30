@@ -1,4 +1,4 @@
-/*css form edit*/
+/* CSS form edit */
 body {
     font-family: Arial, sans-serif;
 }
@@ -48,8 +48,7 @@ a {
     text-decoration: none;
 }
 
-/*CSS index*/
-
+/* CSS index */
 body {
     font-family: Arial, sans-serif;
 }
@@ -143,6 +142,14 @@ h1 {
     color: #fff;
 }
 
+#descricao-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
 .table-primary th,
 .table-primary td,
 .table-primary thead th,
@@ -183,53 +190,53 @@ h1 {
     border-color: #bd2130;
 }
 
-/*CSS Show*/
-
+/* CSS Show */
 h1 {
     color: #333;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-  }
-  
-  .card {
+}
+
+.card {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 20px;
     margin-bottom: 20px;
-  }
-  
-  .card-header {
+}
+
+.card-header {
     background-color: #f0f0f0;
     padding: 10px;
     margin-bottom: 10px;
-  }
-  
-  .card-header h4 {
+}
+
+.card-header h4 {
     margin: 0;
-  }
-  
-  .card-body p {
+}
+
+.card-body p {
     margin-bottom: 10px;
-  }
-  
-  .card-footer {
+}
+
+.card-footer {
     text-align: right;
-  }
-  
-  .card-footer .btn {
+}
+
+.card-footer .btn {
     padding: 8px 16px;
     font-size: 14px;
     text-decoration: none;
     background-color: #007bff;
     color: #fff;
     border-radius: 4px;
-  }
-  
-  .card-footer .btn:hover {
+}
+
+.card-footer .btn:hover {
     background-color: #0056b3;
-  }
-  .back-link {
+}
+
+.back-link {
     display: inline-block;
     margin-top: 10px;
     color: #666;
@@ -244,10 +251,7 @@ h1 {
     background-color: #e0e0e0;
 }
 
-
-/*CSS welcome*/
-
-
+/* CSS welcome */
 body {
     font-family: Arial, sans-serif;
 }
@@ -281,4 +285,3 @@ h1 {
 .button-container a:hover {
     background-color: #0056b3;
 }
-
