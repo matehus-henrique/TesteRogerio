@@ -49,12 +49,4 @@ Para executar o projeto, siga as etapas abaixo:
 6. Execute o servidor de desenvolvimento com o comando `php artisan serve`.
 7. Acesse o sistema através do navegador no endereço `http://localhost:8000`.
 
-## Contribuição
-
-Se desejar contribuir para o projeto, siga as etapas abaixo:
-
-1. Faça um fork do repositório.
-2. Crie uma nova branch com sua funcionalidade ou correção de bug.
-3. Implemente as alterações e faça commit.
-4. Envie um pull request explicando as mudanças realizadas.
-5. Aguarde a revisão e o feedback dos mantenedores do projeto.
+.
